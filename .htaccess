@@ -120,6 +120,12 @@
     Options +FollowSymLinks
     RewriteEngine on
 
+    SetEnvIf Host .*rostyslav-vyshemirskyi.local.* MAGE_RUN_CODE=base
+    SetEnvIf Host .*rostyslav-vyshemirskyi.local.* MAGE_RUN_TYPE=website
+
+    SetEnvIf Host .*rostyslav-vyshemirskyi-additional.local.* MAGE_RUN_CODE=additional_website
+    SetEnvIf Host .*rostyslav-vyshemirskyi-additional.local.* MAGE_RUN_TYPE=website
+
 ############################################
 ## you can put here your magento root folder
 ## path relative to web root
