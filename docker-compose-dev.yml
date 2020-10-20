@@ -48,7 +48,7 @@ services:
       - "rostyslav-vyshemirskyi-dev.local www.rostyslav-vyshemirskyi-dev.local rostyslav-vyshemirskyi-additional-dev.local www.rostyslav-vyshemirskyi-additional-dev.local:127.0.0.1"
       # Required for xDebug on Linux hosts till docker.host.internal is not available by default - https://github.com/docker/libnetwork/pull/2348/files
       - "host.docker.internal:172.17.0.1"
-#    links:
+    links:
 #      - memcached
 #      - redis
       - elasticsearch
@@ -90,17 +90,17 @@ services:
 #    restart: always
 
   elasticsearch:
-      image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
-      environment:
-          - network.host=0.0.0.0
-          - http.host=0.0.0.0
-          - transport.host=127.0.0.1
-          - xpack.security.enabled=false
-          - indices.query.bool.max_clause_count=10240
-          - ES_JAVA_OPTS=-Xms1024m -Xmx1024m
-      ulimits:
-          memlock:
-              soft: -1
-              hard: -1
-      restart: always
-      network_mode: bridge
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    environment:
+      - network.host=0.0.0.0
+      - http.host=0.0.0.0
+      - transport.host=127.0.0.1
+      - xpack.security.enabled=false
+      - indices.query.bool.max_clause_count=10240
+      - ES_JAVA_OPTS=-Xms1024m -Xmx1024m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    restart: always
+    network_mode: bridge
