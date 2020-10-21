@@ -14,9 +14,9 @@ return [
         'connection' => [
             'default' => [
                 'host' => 'mysql',
-                'dbname' => 'rostyslav_vyshemirskyi_dev_local',
-                'username' => 'rostyslav_vyshemirskyi_dev_local',
-                'password' => 'gfh3k94tpwsujg8lgd',
+                'dbname' => 'rostyslav_vyshemirskyi_build_local',
+                'username' => 'rostyslav_vyshemirskyi_build_local',
+                'password' => 'flsrrggxf8448vjdvr',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
