@@ -33,7 +33,7 @@ return [
         ]
     ],
     'x-frame-options' => 'SAMEORIGIN',
-    'MAGE_MODE' => 'developer',
+    'MAGE_MODE' => 'production',
     'session' => [
         'save' => 'files'
     ],
@@ -76,5 +76,41 @@ return [
     ],
     'install' => [
         'date' => 'Mon, 05 Oct 2020 14:23:09 +0000'
+    ],
+    'system' => [
+        'default' => [
+            'web' => [
+                'unsecure' => [
+                    'base_url' => 'https://rostyslav-vyshemirskyi.local/',
+                    'base_link_url' => '{{unsecure_base_url}}',
+                    'base_static_url' => 'https://rostyslav-vyshemirskyi.local/static/',
+                    'base_media_url' => 'https://rostyslav-vyshemirskyi.local/media/'
+                ],
+                'secure' => [
+                    'base_url' => 'https://rostyslav-vyshemirskyi.local/',
+                    'base_link_url' => '{{secure_base_url}}',
+                    'base_static_url' => 'https://rostyslav-vyshemirskyi.local/static/',
+                    'base_media_url' => 'https://rostyslav-vyshemirskyi.local/media/'
+                ]
+            ]
+        ],
+        'websites' => [
+            'additional_website' => [
+                'web' => [
+                    'unsecure' => [
+                        'base_url' => 'https://rostyslav-vyshemirskyi-additional.local/',
+                        'base_link_url' => 'https://rostyslav-vyshemirskyi-additional.local/',
+                        'base_static_url' => 'https://rostyslav-vyshemirskyi-additional.local/static/',
+                        'base_media_url' => 'https://rostyslav-vyshemirskyi-additional.local/media/'
+                    ],
+                    'secure' => [
+                        'base_url' => 'https://rostyslav-vyshemirskyi-additional.local/',
+                        'base_link_url' => 'https://rostyslav-vyshemirskyi-additional.local/',
+                        'base_static_url' => 'https://rostyslav-vyshemirskyi-additional.local/static/',
+                        'base_media_url' => 'https://rostyslav-vyshemirskyi-additional.local/media/'
+                    ]
+                ]
+            ]
+        ]
     ]
 ];
