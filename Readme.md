@@ -40,3 +40,16 @@ Deployment process flow implemented in the above files:
 6) copy generated files from the build system;
 7) switch to the production mode;
 8) turn off maintenance (only for `deploy-full.sh`).
+
+
+# Configuration Grunt #
+
+To configure Grunt you need to follow these steps:
+
+1) Insert such files into your project:
+`package.json`, `Gruntfile.js`, `grunt-config.json`;
+2) Create theme configuration in `dev/tools/grunt/configs/local-themes.js`;
+3) Go to `BASH` and run `npm install`;
+4) Modify the `dev/tools/grunt/configs/less.js`
+   by adding `outputSourceFiles: true`;
+5) Run `grunt exec:dvcampus_luma_en_us && grunt less:dvcampus_luma_en_us`;
