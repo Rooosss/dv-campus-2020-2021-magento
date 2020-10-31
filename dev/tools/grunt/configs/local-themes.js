@@ -1,10 +1,10 @@
 /**
- * grunt exec:dvcampus_luma_en_us && grunt less:dvcampus_luma_en_us
+ * grunt exec:rostyslav_luma_en_us && grunt less:rostyslav_luma_en_us
  */
 module.exports = {
-    dvcampus_luma_en_us: {
+    rostyslav_luma_en_us: {
         area: 'frontend',
-        name: 'DVCampus/luma',
+        name: 'Rostyslav/luma',
         locale: 'en_US',
         files: [
             'css/styles-m',

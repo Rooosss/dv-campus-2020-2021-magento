@@ -98,7 +98,7 @@ return [
             'base' => [
                 'design' => [
                     'theme' => [
-                        'theme_id' => 4
+                        'theme_id' => 5
                     ]
                 ]
             ],

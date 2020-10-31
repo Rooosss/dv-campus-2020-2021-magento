@@ -52,4 +52,4 @@ To configure Grunt you need to follow these steps:
 3) Go to `BASH` and run `npm install`;
 4) Modify the `dev/tools/grunt/configs/less.js`
    by adding `outputSourceFiles: true`;
-5) Run `grunt exec:dvcampus_luma_en_us && grunt less:dvcampus_luma_en_us`;
+5) Run `grunt exec:rostyslav_luma_en_us && grunt less:rostyslav_luma_en_us`;
