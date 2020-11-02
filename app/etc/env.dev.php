@@ -91,10 +91,17 @@ return [
                     'base_link_url' => '{{secure_base_url}}',
                     'base_static_url' => 'https://rostyslav-vyshemirskyi-dev.local/static/',
                     'base_media_url' => 'https://rostyslav-vyshemirskyi-dev.local/media/'
-                ],
-            ],
+                ]
+            ]
         ],
         'websites' => [
+            'base' => [
+                'design' => [
+                    'theme' => [
+                        'theme_id' => 5
+                    ]
+                ]
+            ],
             'additional_website' => [
                 'web' => [
                     'unsecure' => [
