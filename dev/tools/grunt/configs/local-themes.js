@@ -1,5 +1,5 @@
 /**
- * grunt exec:rostyslav_luma_en_us && grunt less:rostyslav_luma_en_us
+ * grunt exec:rostyslav_luma_en_us && grunt less:rostyslav_luma_en_us && grunt watch
  */
 module.exports = {
     rostyslav_luma_en_us: {
