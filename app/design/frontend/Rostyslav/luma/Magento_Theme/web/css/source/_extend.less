@@ -1,22 +1,19 @@
 & when (@media-common = true) {
 
-    body {
+    .page-footer {
+        background-color: @color-sky-blue1;
 
-        .page-header .panel.wrapper {
-            background-color: @color-blue3;
+        .footer.content .links a {
+            color: @color-white;
+            font-weight: @font-weight__bold;
         }
 
-        .page-footer {
+        .footer.content .links > li {
             background-color: @color-sky-blue1;
+        }
 
-            .footer.content .links a {
-                color: @color-white;
-                font-weight: @font-weight__bold;
-            }
-
-            .footer.content .links li strong {
-                color: @color-white;
-            }
+        .footer.content .links li strong {
+            color: @color-white;
         }
     }
 
@@ -25,8 +22,13 @@
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    .footer.content .links > li {
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .page-header .panel.wrapper {
+        background-color: @color-blue3;
+    }
+
+    .page-footer {
         background-color: @color-sky-blue1;
     }
 }
