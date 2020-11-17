@@ -8,7 +8,7 @@
         }
 
         .navigation .level0 > .level-top:hover {
-            color: @color-gray20;
+            color: @color-white;
         }
 
         .navigation {
@@ -16,6 +16,10 @@
         }
 
         .navigation a {
+            color: @color-white;
+        }
+
+        .navigation a:hover {
             color: @color-white;
         }
 
@@ -28,12 +32,39 @@
         }
 
         .header.links li a:hover {
-            color: @color-gray20;
+            color: @color-white;
         }
     }
 
-    .navigation .submenu:not(:first-child) ul > li a {
-        color: @color-white;
+    .navigation {
+
+        .submenu:not(:first-child) ul > li a {
+            color: @color-white;
+        }
+
+        .submenu:not(:first-child) > li > a:hover {
+            color: @color-white;
+        }
+
+        .submenu:not(:first-child) ul > li a:hover {
+            color: @color-white;
+        }
+
+        .submenu:not(:first-child) .active > a {
+            color: @color-white;
+        }
+
+        .level0.active > a:not(.ui-state-active) {
+            color: @color-white;
+        }
+
+        .level0.active .all-category .ui-state-focus {
+            color: @color-white;
+        }
+
+        .level0.has-active > a:not(.ui-state-active) {
+            color: @color-white;
+        }
     }
 
     .nav-sections-item-title {
@@ -62,5 +93,23 @@
     .breadcrumbs a:visited,
     .breadcrumbs a:hover {
         color: @color-orange-red1;
+    }
+
+    .navigation {
+        .submenu:not(:first-child) ul > li a {
+            color: @color-gray20;
+        }
+
+        .submenu:not(:first-child) ul > li a:hover {
+            color: @color-gray20;
+        }
+
+        .level0.has-active > .level-top {
+            color: @color-white;
+        }
+
+        .submenu:not(:first-child) > li > a:hover {
+            color: @color-gray20;
+        }
     }
 }
