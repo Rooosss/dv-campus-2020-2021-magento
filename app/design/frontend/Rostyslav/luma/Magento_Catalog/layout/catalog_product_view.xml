@@ -2,5 +2,11 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <move element="product.info.social" destination="product.info.main" before="product.info.review"/>
+        <referenceContainer name="product.info.main">
+            <container htmlTag="div" htmlClass="product-error-message" after="-">
+                <block class="Magento\Framework\View\Element\Template" name="product.error.message"
+                       template="Magento_Catalog::product/view/product_message.phtml"/>
+            </container>
+        </referenceContainer>
     </body>
 </page>
