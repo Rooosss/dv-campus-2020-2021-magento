@@ -4,11 +4,12 @@
  * See COPYING.txt for license details.
  */
 
+/** @var \Magento\Framework\Escaper $escaper */
 /** @var \Magento\Newsletter\Block\Subscribe $block */
 ?>
 <div class="block newsletter">
     <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
-    <p>Subscribe now to get a special promo!</p>
+    <p><?= $escaper->escapeHtml(__('Subscribe now to get a special promo!')) ?></p>
     <div class="content">
         <form class="form subscribe"
             novalidate
