@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <container htmlTag="div" htmlClass="main-message" before="-">
+                <block class="Magento\Cms\Block\Block" name="warning.main.message">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">warning_main_message</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Cms\Block\Block" name="catalog.view.image">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">catalog_view_image</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
