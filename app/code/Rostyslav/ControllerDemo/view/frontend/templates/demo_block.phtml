@@ -1,0 +1,4 @@
+<?php /** @var \Rostyslav\ControllerDemo\Block\Demo $block */ ?>
+<?php /** @var \Magento\Framework\Escaper $escaper */ ?>
+<p><?= $escaper->escapeHtml(__('Full name: %1 %2', $block->getFirst(), $block->getLast())) ?></p>
+<p><?= $escaper->escapeHtml(__('Repository URL: %1', $block->getLink())) ?></p>
