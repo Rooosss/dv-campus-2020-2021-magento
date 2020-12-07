@@ -44,6 +44,6 @@ class Forward implements \Magento\Framework\App\Action\HttpGetActionInterface
                 'lastname' => 'Vyshemirskyi',
                 'url' => 'https://github.com/Rooosss/dv-campus-2020-2021-magento'
             ])
-            ->forward('Data');
+            ->forward('data');
     }
 }
