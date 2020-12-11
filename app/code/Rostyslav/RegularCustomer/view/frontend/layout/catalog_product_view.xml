@@ -10,6 +10,11 @@
                     <argument name="sort_order" xsi:type="string">40</argument>
                     <argument translate="true" name="title" xsi:type="string">Loyalty program for Regular Customers</argument>
                 </arguments>
+                <block class="Magento\Cms\Block\Block" name="product.loyalty.program.description">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">description_loyalty</argument>
+                    </arguments>
+                </block>
             </block>
         </referenceBlock>
     </body>
