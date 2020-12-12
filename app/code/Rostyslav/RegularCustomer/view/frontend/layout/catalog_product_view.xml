@@ -15,6 +15,11 @@
                         <argument name="block_id" xsi:type="string">description_loyalty</argument>
                     </arguments>
                 </block>
+                <block class="Magento\Framework\View\Element\Template"
+                       name="product.loyalty.program.button"
+                       template="Rostyslav_RegularCustomer::catalog/product/view/button.phtml"
+                       group="detailed_info"
+                />
             </block>
         </referenceBlock>
     </body>
