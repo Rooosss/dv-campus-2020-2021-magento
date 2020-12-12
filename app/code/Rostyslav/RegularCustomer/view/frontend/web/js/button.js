@@ -17,7 +17,7 @@ define([
          * Generate event to open the form
          */
         openRequestForm: function () {
-            console.log(this);
+            $(document).trigger('rostyslav_discount_form_open');
         }
     });
 

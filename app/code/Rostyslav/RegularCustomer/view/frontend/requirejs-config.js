@@ -1,7 +1,8 @@
 var config = {
     map: {
         '*': {
-            rostyslav_RegularCustomer_button: 'Rostyslav_RegularCustomer/js/button'
+            RostyslavRegularCustomerButton: 'Rostyslav_RegularCustomer/js/button',
+            RostyslavRegularCustomerForm: 'Rostyslav_RegularCustomer/js/form'
         }
     }
 };

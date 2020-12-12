@@ -20,6 +20,11 @@
                        template="Rostyslav_RegularCustomer::catalog/product/view/button.phtml"
                        group="detailed_info"
                 />
+                <block class="Magento\Catalog\Block\Product\View"
+                       name="product.loyalty.program.form"
+                       template="Rostyslav_RegularCustomer::catalog/product/view/form.phtml"
+                       group="detailed_info"
+                />
             </block>
         </referenceBlock>
     </body>
