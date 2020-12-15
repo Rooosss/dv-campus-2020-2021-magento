@@ -35,11 +35,9 @@ define([
          * Validate form and send request
          */
         sendRequest: function () {
-            if (!this.validateForm()) {
-                return;
+            if (this.validateForm()) {
+                this.ajaxSubmit();
             }
-
-            this.ajaxSubmit();
         },
 
         /**
