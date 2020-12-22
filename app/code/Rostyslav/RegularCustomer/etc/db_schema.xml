@@ -40,7 +40,7 @@
             <column name="website_id"/>
         </constraint>
         <constraint xsi:type="foreign"
-                    referenceId="ROSTYSLAV_DISCOUNT_REGULAR_CUSTOMER_CS_ID"
+                    referenceId="ROSTYSLAV_DISCOUNT_REGULAR_CSTR_CSTR_ID_M2_CSTR_ENTT_ENTT_ID"
                     table="rostyslav_discount_regular_customer"
                     column="customer_id"
                     referenceTable="customer_entity"
@@ -48,7 +48,7 @@
                     onDelete="SET NULL"
         />
         <constraint xsi:type="foreign"
-                    referenceId="ROSTYSLAV_DISCOUNT_REGULAR_CUSTOMER_WB_ID"
+                    referenceId="ROSTYSLAV_DISCOUNT_REGULAR_CSTR_WS_ID_M2_STORE_WS_WS_ID"
                     table="rostyslav_discount_regular_customer"
                     column="website_id"
                     referenceTable="store_website"
