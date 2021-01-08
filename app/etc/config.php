@@ -314,6 +314,7 @@ return [
         'Rostyslav_Cms' => 1,
         'Rostyslav_ControllerDemo' => 1,
         'Rostyslav_RegularCustomer' => 1,
+        'Rostyslav_Widget' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,
