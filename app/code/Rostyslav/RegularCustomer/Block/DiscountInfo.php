@@ -11,7 +11,7 @@ use Magento\Framework\Phrase;
 class DiscountInfo extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Rostyslav\RegularCustomer\Model\ResourceModel\DiscountRequest\CollectionFactory $collectionFactorys
+     * @var \Rostyslav\RegularCustomer\Model\ResourceModel\DiscountRequest\CollectionFactory $collectionFactory
      */
     private $collectionFactory;
 
@@ -21,7 +21,7 @@ class DiscountInfo extends \Magento\Framework\View\Element\Template
     private $storeManager;
 
     /**
-     * PersonalDiscountInfo constructor.
+     * DiscountInfo constructor.
      * @param \Rostyslav\RegularCustomer\Model\ResourceModel\DiscountRequest\CollectionFactory $collectionFactory
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Magento\Framework\View\Element\Template\Context $context
@@ -52,7 +52,7 @@ class DiscountInfo extends \Magento\Framework\View\Element\Template
         /** @var DiscountRequest $discountRequest */
         $discountRequest = $collection->getFirstItem();
 
-        return $discountRequest->getDiscountRequestId() ? $discountRequest : null;
+        return $discountRequest->getRequestId() ? $discountRequest : null;
     }
 
     /**
