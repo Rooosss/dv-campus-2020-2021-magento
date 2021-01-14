@@ -35,6 +35,11 @@ class Request implements \Magento\Framework\App\Action\HttpPostActionInterface
     private $discountRequestResource;
 
     /**
+     * @var \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator
+     */
+    private $formKeyValidator;
+
+    /**
      * @var \Psr\Log\LoggerInterface $logger
      */
     private $logger;
@@ -46,6 +51,7 @@ class Request implements \Magento\Framework\App\Action\HttpPostActionInterface
      * @param \Rostyslav\RegularCustomer\Model\ResourceModel\DiscountRequest $discountRequestResource
      * @param \Rostyslav\RegularCustomer\Model\DiscountRequestFactory $discountRequestFactory
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+     * @param \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator
      * @param \Psr\Log\LoggerInterface $logger
      */
     public function __construct(
@@ -54,6 +60,7 @@ class Request implements \Magento\Framework\App\Action\HttpPostActionInterface
         \Rostyslav\RegularCustomer\Model\ResourceModel\DiscountRequest $discountRequestResource,
         \Rostyslav\RegularCustomer\Model\DiscountRequestFactory $discountRequestFactory,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator,
         \Psr\Log\LoggerInterface $logger
     ) {
         $this->request = $request;
@@ -61,6 +68,7 @@ class Request implements \Magento\Framework\App\Action\HttpPostActionInterface
         $this->discountRequestResource = $discountRequestResource;
         $this->discountRequestFactory = $discountRequestFactory;
         $this->storeManager = $storeManager;
+        $this->formKeyValidator = $formKeyValidator;
         $this->logger = $logger;
     }
 
@@ -75,8 +83,13 @@ class Request implements \Magento\Framework\App\Action\HttpPostActionInterface
         // @TODO: pass message via notifications, not alert
         // @TODO: add form key validation and hideIt validation
         // @TODO: add Google Recaptcha to the form
+        $formSaved = false;
 
         try {
+            if (!$this->formKeyValidator->validate($this->request)) {
+                throw new \InvalidArgumentException('Form key is not valid');
+            }
+
             /** @var DiscountRequest $discountRequest */
             $discountRequest = $this->discountRequestFactory->create();
             $discountRequest->setName($this->request->getParam('name'))
@@ -85,11 +98,16 @@ class Request implements \Magento\Framework\App\Action\HttpPostActionInterface
                 ->setWebsiteId($this->storeManager->getStore()->getWebsiteId())
                 ->setStatus(DiscountRequest::STATUS_PENDING);
             $this->discountRequestResource->save($discountRequest);
-            $message = __('You request for product %1 was accepted!', $this->request->getParam('productName'));
+            $formSaved = true;
+        } catch (\InvalidArgumentException $e) {
+            // No need to log form key validation errors
         } catch (\Exception $e) {
             $this->logger->error($e->getMessage());
-            $message = __('Your request can\'t be sent. Please, contact us if you see this message.');
         }
+
+        $message = $formSaved
+            ? __('You request for product %1 was accepted!', $this->request->getParam('productName'))
+            : __('Your request can\'t be sent. Please, contact us if you see this message.');
 
         return $response->setData([
             'message' => $message
