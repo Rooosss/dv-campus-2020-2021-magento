@@ -100,6 +100,7 @@ class Request implements \Magento\Framework\App\Action\HttpPostActionInterface
 
             /** @var DiscountRequest $discountRequest */
             $discountRequest = $this->discountRequestFactory->create();
+            $productId = $this->request->getParam('productId');
             $discountRequest->setName($this->request->getParam('name'))
                 ->setEmail($this->request->getParam('email'))
                 ->setMessage($this->request->getParam('message'))
